@@ -11,14 +11,12 @@ pnpm dev
 
 Buka `http://localhost:3000` di browser.
 
-## Halaman
+## Struktur landing page
 
-- `/` — beranda, identitas organisasi, dan ringkasan program kerja
-- `/tentang` — sejarah, visi/misi, nilai, dan struktur organisasi
-- `/program` — direktori program kerja dengan pencarian, filter unit, status, dan format detail
-- `/berita` — mengalihkan tautan lama ke halaman program kerja
-- `/galeri` — dokumentasi foto/video
-- `/kontak` — informasi kontak, form pengaduan, dan peta
+- `/` — satu landing page yang memuat hero, profil, struktur organisasi, program kerja, galeri, sponsor/partnership, kontak, formulir pengaduan, dan lokasi.
+- Navigasi utama menggunakan anchor `#tentang`, `#program`, `#galeri`, dan `#kontak`.
+- `/tentang`, `/program`, `/galeri`, dan `/kontak` mengalihkan tautan lama ke bagian terkait pada landing page.
+- `/berita` mengalihkan tautan lama ke bagian program kerja.
 
 ## Integrasi backend
 

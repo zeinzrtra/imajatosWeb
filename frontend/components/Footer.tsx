@@ -12,7 +12,7 @@ export function Footer() {
         </div>
         <div>
           <h4>Navigasi</h4>
-          <Link href="/tentang">Tentang Kami</Link><Link href="/program">Program Kerja</Link><Link href="/galeri">Galeri Kegiatan</Link><Link href="/kontak">Kontak</Link>
+          <Link href="/#tentang">Tentang Kami</Link><Link href="/#program">Program Kerja</Link><Link href="/#galeri">Galeri Kegiatan</Link><Link href="/#kontak">Kontak</Link>
         </div>
         <div>
           <h4>Hubungi Kami</h4>
