@@ -15,6 +15,7 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("beranda");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     let frame = 0;
@@ -30,6 +31,7 @@ export function Header() {
         else break;
       }
 
+      setScrolled(window.scrollY > 24);
       setActive((previous) => previous === current ? previous : current);
     };
 
@@ -51,22 +53,34 @@ export function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${open ? "menu-open" : ""}`}>
       <div className="header-inner">
         <Link href="/#beranda" className="brand" aria-label="IMAJATOS Beranda" onClick={() => setActive("beranda")}>
           <span className="brand-mark"><span>I</span></span>
           <span className="brand-copy"><strong>IMAJATOS</strong><small>IPB University</small></span>
         </Link>
         <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Navigasi utama">
-          {links.map(([id, label]) => (
-            <Link key={id} href={`/#${id}`} onClick={() => { setOpen(false); setActive(id); }} className={active === id ? "active" : ""} aria-current={active === id ? "location" : undefined}>
-              {label}
-            </Link>
-          ))}
+          <div className="nav-links">
+            {links.map(([id, label], index) => (
+              <Link key={id} href={`/#${id}`} onClick={() => { setOpen(false); setActive(id); }} className={active === id ? "active" : ""} aria-current={active === id ? "location" : undefined}>
+                <span className="nav-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <span>{label}</span>
+              </Link>
+            ))}
+          </div>
           <Link href="/#pengaduan" className="nav-cta" onClick={() => { setOpen(false); setActive("kontak"); }}>Hubungi Kami</Link>
         </nav>
-        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Buka menu" aria-expanded={open}>
+        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Tutup menu" : "Buka menu"} aria-expanded={open}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
