@@ -21,7 +21,7 @@ export function ProgramSection() {
   }), [query, unitType]);
 
   return <section id="program" className="landing-section program-landing" aria-labelledby="program-title">
-    <div className="landing-section-heading program-hero"><div className="shell"><span>Program Kerja</span><h2 id="program-title">Rencana yang jelas, progres yang terbaca.</h2><p>Temukan program kerja IMAJATOS berdasarkan unit pengelola, lalu lihat tujuan, sasaran, jadwal, dan tahap pelaksanaannya.</p></div></div>
+    <div className="section shell program-intro"><div className="landing-intro-row"><div><span className="mini-label">Program Kerja</span><h2 id="program-title">Rencana yang jelas, progres yang terbaca.</h2><p>Temukan program berdasarkan unit pengelola, lalu lihat tujuan, sasaran, jadwal, dan tahap pelaksanaannya.</p></div><span className="section-number" aria-hidden="true">04</span></div></div>
 
     <div className="program-flow shell" aria-labelledby="program-flow-title">
       <div className="program-flow-heading"><span className="mini-label">Alur Program</span><h3 id="program-flow-title">Dari rencana hingga evaluasi.</h3></div>
