@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, UserRound, X } from "lucide-react";
+import { ChevronDown, UserRound } from "lucide-react";
 import { useState } from "react";
 
 const executiveStructure = [
@@ -46,8 +46,6 @@ function ProfileCardTrigger({ count, role }: { count: number; role: string }) {
       </button>
 
       <div id={profileId} className="chair-popover" aria-hidden={!isOpen}>
-        <button type="button" className="chair-popover-close" aria-label={`Tutup profil ${role}`} onClick={() => { setPinned(false); setHovered(false); }}><X size={16} /></button>
-        <span className="chair-popover-label">Profil {role} IMAJATOS</span>
         <div className={`profile-card-fan fan-${count}`}>
           {profiles.map((profile, index) => (
             <article className={`profile-playing-card card-${index + 1}`} key={profile}>
@@ -58,7 +56,6 @@ function ProfileCardTrigger({ count, role }: { count: number; role: string }) {
             </article>
           ))}
         </div>
-        <small className="popover-note">Foto, nama, dan logo resmi akan ditambahkan setelah aset diterima.</small>
       </div>
     </div>
   );
