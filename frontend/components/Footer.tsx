@@ -6,8 +6,8 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-grid shell">
         <div>
-          <div className="brand footer-brand"><span className="brand-mark"><span>I</span></span><span className="brand-copy"><strong>IMAJATOS</strong><small>Bersama Memberi Dampak</small></span></div>
-          <p>Ruang kolaborasi anak muda untuk berbagi ide, bergerak bareng, dan bikin dampak yang terasa.</p>
+          <div className="brand footer-brand"><span className="brand-mark"><span>I</span></span><span className="brand-copy"><strong>IMAJATOS</strong><small>Mahasiswa Jalur Ketua OSIS</small></span></div>
+          <p>Organisasi mahasiswa yang mewadahi para mahasiswa jalur Ketua OSIS dengan struktur kepengurusan internal.</p>
           <span className="social-button"><Instagram size={18} /> Akun resmi akan ditambahkan</span>
         </div>
         <div>

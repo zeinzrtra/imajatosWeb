@@ -22,7 +22,7 @@ export function Header() {
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="IMAJATOS Beranda">
           <span className="brand-mark"><span>I</span></span>
-          <span className="brand-copy"><strong>IMAJATOS</strong><small>Bersama Memberi Dampak</small></span>
+          <span className="brand-copy"><strong>IMAJATOS</strong><small>Mahasiswa Jalur Ketua OSIS</small></span>
         </Link>
         <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Navigasi utama">
           {links.map(([href, label]) => (

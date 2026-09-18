@@ -1,43 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Building2, CheckCircle2, HandHeart, Leaf, Megaphone, Users } from "lucide-react";
+import { ArrowRight, Building2, GraduationCap, Megaphone, Network, Users } from "lucide-react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { news } from "@/data/site";
 
-const focus = [
-  { icon: BookOpen, title: "Pendidikan", text: "Membuka akses belajar dan meningkatkan literasi generasi muda." },
-  { icon: HandHeart, title: "Sosial Kemanusiaan", text: "Hadir cepat, tepat, dan hangat untuk masyarakat yang membutuhkan." },
-  { icon: Leaf, title: "Lingkungan", text: "Menumbuhkan kesadaran dan aksi nyata untuk bumi yang berkelanjutan." },
-  { icon: Users, title: "Pemberdayaan", text: "Menguatkan potensi lokal agar masyarakat tumbuh lebih mandiri." },
+const identity = [
+  { icon: GraduationCap, title: "Wadah Mahasiswa", text: "Mewadahi para mahasiswa yang diterima melalui jalur Ketua OSIS." },
+  { icon: Network, title: "Kepengurusan Internal", text: "Berjalan dengan struktur kepengurusan IMAJATOS sendiri." },
 ];
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <Image src="/hero-community.png" alt="Relawan IMAJATOS berkolaborasi dalam kegiatan sosial" fill priority sizes="100vw" className="hero-image" />
+        <Image src="/hero-community.png" alt="Ilustrasi mahasiswa berdiskusi dan berkolaborasi" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-overlay" />
         <div className="shell hero-content">
-          <div className="hero-kicker"><span /> Bareng-bareng sejak 2022</div>
-          <h1>Mulai dari Peduli,<br />Lanjut Jadi <em>Aksi.</em></h1>
-          <p>Hal baik nggak harus dimulai dari sesuatu yang besar. Yang penting, kita mulai dan bergerak bareng untuk masyarakat dan lingkungan.</p>
+          <div className="hero-kicker"><span /> Organisasi Mahasiswa Jalur Ketua OSIS</div>
+          <h1>Satu Jalur,<br />Tumbuh dalam <em>Satu Wadah.</em></h1>
+          <p>IMAJATOS mewadahi mahasiswa jalur Ketua OSIS dan berjalan melalui struktur kepengurusan internalnya sendiri.</p>
           <div className="hero-actions">
-            <Link href="/berita" className="button button-primary">Lihat Aksi Kami <ArrowRight size={18} /></Link>
-            <Link href="/tentang" className="button button-ghost">Kenalan Yuk</Link>
+            <Link href="/tentang" className="button button-primary">Kenali IMAJATOS <ArrowRight size={18} /></Link>
+            <Link href="/berita" className="button button-ghost">Lihat Kabar</Link>
           </div>
           <div className="hero-stats hero-principles">
-            <div><CheckCircle2 size={20} /><span>Program berbasis kebutuhan</span></div><div><Users size={20} /><span>Terbuka untuk relawan</span></div><div><Building2 size={20} /><span>Kolaborasi dengan mitra</span></div>
+            <div><GraduationCap size={20} /><span>Mahasiswa jalur Ketua OSIS</span></div><div><Users size={20} /><span>Kepengurusan mandiri</span></div><div><Building2 size={20} /><span>Terbuka untuk kolaborasi</span></div>
           </div>
         </div>
       </section>
 
       <section className="intro section shell">
         <div className="intro-copy">
-          <SectionTitle eyebrow="Kenalan Dulu" title="Ruang buat ide baik tumbuh bareng." />
-          <p>IMAJATOS mempertemukan anak muda, ide, dan semangat kolaborasi untuk menjawab kebutuhan nyata di sekitar kita.</p>
-          <Link href="/tentang" className="text-link">Cerita lengkapnya <ArrowRight size={17} /></Link>
+          <SectionTitle eyebrow="Tentang IMAJATOS" title="Wadah mahasiswa dengan kepengurusan sendiri." />
+          <p>IMAJATOS menjadi ruang bersama bagi mahasiswa jalur Ketua OSIS. Organisasi ini dikelola melalui kepengurusan internal yang akan ditampilkan lengkap setelah data resminya tersedia.</p>
+          <Link href="/tentang" className="text-link">Lihat profil organisasi <ArrowRight size={17} /></Link>
         </div>
-        <div className="quote-card"><span className="content-status">Arah konten</span><div className="quote-mark">“</div><blockquote>Profil resmi, sejarah, dan prinsip kerja akan disesuaikan dengan informasi terverifikasi dari IMAJATOS.</blockquote><span>Konten sementara untuk kebutuhan presentasi desain.</span></div>
+        <div className="quote-card"><span className="content-status">Data organisasi</span><div className="quote-mark">“</div><blockquote>Nama kampus, sejarah, visi, misi, serta susunan pengurus akan dilengkapi dari dokumen resmi IMAJATOS.</blockquote><span>Informasi yang belum diterima tidak digantikan dengan konten rekaan.</span></div>
       </section>
 
       <section className="partner-section shell" aria-labelledby="partner-title">
@@ -48,8 +46,8 @@ export default function Home() {
 
       <section className="focus-section section">
         <div className="shell">
-          <SectionTitle eyebrow="Yang Kami Kerjakan" title="Empat cara kami bikin dampak." text="Kami bergerak di berbagai bidang, sambil tetap dekat dengan kebutuhan masyarakat." centered />
-          <div className="focus-grid">{focus.map(({ icon: Icon, title, text }, i) => <article className="focus-card" key={title}><span className="focus-number">0{i + 1}</span><div className="focus-icon"><Icon size={26} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <SectionTitle eyebrow="Identitas Organisasi" title="Satu wadah, dengan kepengurusan sendiri." text="Dua hal ini menjadi dasar untuk menjelaskan posisi IMAJATOS secara jelas kepada anggota, kampus, sponsor, dan mitra." centered />
+          <div className="focus-grid">{identity.map(({ icon: Icon, title, text }, i) => <article className="focus-card" key={title}><span className="focus-number">0{i + 1}</span><div className="focus-icon"><Icon size={26} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
         </div>
       </section>
 

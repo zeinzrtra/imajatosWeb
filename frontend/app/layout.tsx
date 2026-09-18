@@ -4,8 +4,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "IMAJATOS — Bersama Memberi Dampak",
-  description: "Organisasi pemuda yang bergerak bersama masyarakat untuk pendidikan, sosial, lingkungan, dan pemberdayaan.",
+  title: "IMAJATOS — Mahasiswa Jalur Ketua OSIS",
+  description: "Organisasi mahasiswa yang mewadahi para mahasiswa jalur Ketua OSIS dan dikelola melalui struktur kepengurusan internal.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
