@@ -30,7 +30,7 @@ export function Header() {
               {label}
             </Link>
           ))}
-          <Link href="/kontak#pengaduan" className="nav-cta" onClick={() => setOpen(false)}>Hubungi Kami</Link>
+          <Link href="/kontak#pengaduan" className="nav-cta" onClick={() => setOpen(false)}>Ngobrol Yuk</Link>
         </nav>
         <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label="Buka menu" aria-expanded={open}>
           {open ? <X size={24} /> : <Menu size={24} />}

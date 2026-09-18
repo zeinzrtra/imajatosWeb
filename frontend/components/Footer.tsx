@@ -7,7 +7,7 @@ export function Footer() {
       <div className="footer-grid shell">
         <div>
           <div className="brand footer-brand"><span className="brand-mark"><span>I</span></span><span className="brand-copy"><strong>IMAJATOS</strong><small>Bersama Memberi Dampak</small></span></div>
-          <p>Wadah kolaborasi pemuda untuk menciptakan perubahan yang nyata, inklusif, dan berkelanjutan.</p>
+          <p>Ruang kolaborasi anak muda untuk berbagi ide, bergerak bareng, dan bikin dampak yang terasa.</p>
           <a className="social-button" href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={18} /> @imajatos</a>
         </div>
         <div>
