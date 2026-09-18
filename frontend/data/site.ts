@@ -63,12 +63,3 @@ export const gallery = [
   { title: "Pemberdayaan usaha lokal", tag: "Ekonomi", image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=85" },
   { title: "Kerja bakti lingkungan", tag: "Aksi", image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85" },
 ];
-
-export const team = [
-  { name: "Nama Ketua", role: "Ketua Umum", initials: "KU", color: "green" },
-  { name: "Nama Wakil Ketua", role: "Wakil Ketua", initials: "WK", color: "amber" },
-  { name: "Nama Sekretaris", role: "Sekretaris", initials: "SK", color: "blue" },
-  { name: "Nama Bendahara", role: "Bendahara", initials: "BD", color: "rose" },
-  { name: "Nama Koordinator", role: "Koordinator Program", initials: "KP", color: "purple" },
-  { name: "Nama Koordinator", role: "Koordinator Humas", initials: "KH", color: "teal" },
-];

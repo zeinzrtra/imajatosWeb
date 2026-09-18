@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { news } from "@/data/site";
 
 const identity = [
-  { icon: GraduationCap, title: "Wadah Mahasiswa", text: "Mewadahi para mahasiswa yang diterima melalui jalur Ketua OSIS." },
+  { icon: GraduationCap, title: "Wadah Mahasiswa IPB", text: "Mewadahi para mahasiswa IPB University yang diterima melalui jalur Ketua OSIS." },
   { icon: Network, title: "Kepengurusan Internal", text: "Berjalan dengan struktur kepengurusan IMAJATOS sendiri." },
 ];
 
@@ -16,9 +16,9 @@ export default function Home() {
         <Image src="/hero-community.png" alt="Ilustrasi mahasiswa berdiskusi dan berkolaborasi" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-overlay" />
         <div className="shell hero-content">
-          <div className="hero-kicker"><span /> Organisasi Mahasiswa Jalur Ketua OSIS</div>
+          <div className="hero-kicker"><span /> Organisasi Mahasiswa IPB University</div>
           <h1>Satu Jalur,<br />Tumbuh dalam <em>Satu Wadah.</em></h1>
-          <p>IMAJATOS mewadahi mahasiswa jalur Ketua OSIS dan berjalan melalui struktur kepengurusan internalnya sendiri.</p>
+          <p>IMAJATOS mewadahi mahasiswa IPB University jalur Ketua OSIS dan berjalan melalui struktur kepengurusan internalnya sendiri.</p>
           <div className="hero-actions">
             <Link href="/tentang" className="button button-primary">Kenali IMAJATOS <ArrowRight size={18} /></Link>
             <Link href="/berita" className="button button-ghost">Lihat Kabar</Link>
@@ -32,10 +32,10 @@ export default function Home() {
       <section className="intro section shell">
         <div className="intro-copy">
           <SectionTitle eyebrow="Tentang IMAJATOS" title="Wadah mahasiswa dengan kepengurusan sendiri." />
-          <p>IMAJATOS menjadi ruang bersama bagi mahasiswa jalur Ketua OSIS. Organisasi ini dikelola melalui kepengurusan internal yang akan ditampilkan lengkap setelah data resminya tersedia.</p>
+          <p>IMAJATOS menjadi ruang bersama bagi mahasiswa IPB University jalur Ketua OSIS. Organisasi ini dikelola melalui kepengurusan internalnya sendiri.</p>
           <Link href="/tentang" className="text-link">Lihat profil organisasi <ArrowRight size={17} /></Link>
         </div>
-        <div className="quote-card"><span className="content-status">Data organisasi</span><div className="quote-mark">“</div><blockquote>Nama kampus, sejarah, visi, misi, serta susunan pengurus akan dilengkapi dari dokumen resmi IMAJATOS.</blockquote><span>Informasi yang belum diterima tidak digantikan dengan konten rekaan.</span></div>
+        <div className="quote-card"><span className="content-status">Data organisasi</span><div className="quote-mark">“</div><blockquote>Sejarah, visi, misi, nama unit, serta nama pengurus akan dilengkapi dari dokumen resmi IMAJATOS.</blockquote><span>Informasi yang belum diterima tidak digantikan dengan konten rekaan.</span></div>
       </section>
 
       <section className="partner-section shell" aria-labelledby="partner-title">

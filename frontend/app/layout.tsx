@@ -4,8 +4,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "IMAJATOS — Mahasiswa Jalur Ketua OSIS",
-  description: "Organisasi mahasiswa yang mewadahi para mahasiswa jalur Ketua OSIS dan dikelola melalui struktur kepengurusan internal.",
+  title: "IMAJATOS IPB — Mahasiswa Jalur Ketua OSIS",
+  description: "Organisasi mahasiswa IPB University yang mewadahi para mahasiswa jalur Ketua OSIS dan dikelola melalui struktur kepengurusan internal.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
