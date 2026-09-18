@@ -52,7 +52,7 @@ export default function Home() {
         <div className="news-grid">{news.slice(0, 3).map((item, i) => <article className={`news-card ${i === 0 ? "featured" : ""}`} key={item.slug}><div className="news-image"><Image src={item.image} alt="" fill sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"} /><span>{item.category}</span></div><div className="news-content"><time>{item.date}</time><h3>{item.title}</h3><p>{item.excerpt}</p><Link href={`/berita#${item.slug}`} aria-label={`Baca ${item.title}`}>Baca selengkapnya <ArrowRight size={16} /></Link></div></article>)}</div>
       </section>
 
-      <section className="cta-section"><div className="shell cta-inner"><div><span className="cta-kicker"><Megaphone size={18} /> Ikut ambil bagian</span><h2>Yuk, bikin dampak bareng.</h2><p>Punya ide, waktu, atau energi baik? Kami senang banget kalau bisa jalan bareng kamu.</p></div><Link href="/kontak#pengaduan" className="button button-light">Ngobrol Sama Kami <ArrowRight size={18} /></Link></div></section>
+      <section className="cta-section"><div className="shell cta-inner"><div><span className="cta-kicker"><Megaphone size={18} /> Terbuka untuk kolaborasi</span><h2>Mari ciptakan dampak bersama.</h2><p>Punya ide program, peluang sponsorship, atau rencana partnership? Kami terbuka untuk bekerja sama.</p></div><Link href="/kontak#pengaduan" className="button button-light">Hubungi Kami <ArrowRight size={18} /></Link></div></section>
     </>
   );
 }
