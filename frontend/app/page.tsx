@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, HandHeart, Leaf, Megaphone, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Building2, CheckCircle2, HandHeart, Leaf, Megaphone, Users } from "lucide-react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { news } from "@/data/site";
 
@@ -25,8 +25,8 @@ export default function Home() {
             <Link href="/berita" className="button button-primary">Lihat Aksi Kami <ArrowRight size={18} /></Link>
             <Link href="/tentang" className="button button-ghost">Kenalan Yuk</Link>
           </div>
-          <div className="hero-stats">
-            <div><strong>2.500+</strong><span>Penerima Manfaat</span></div><div><strong>45+</strong><span>Program Tuntas</span></div><div><strong>120+</strong><span>Relawan Aktif</span></div>
+          <div className="hero-stats hero-principles">
+            <div><CheckCircle2 size={20} /><span>Program berbasis kebutuhan</span></div><div><Users size={20} /><span>Terbuka untuk relawan</span></div><div><Building2 size={20} /><span>Kolaborasi dengan mitra</span></div>
           </div>
         </div>
       </section>
@@ -37,7 +37,13 @@ export default function Home() {
           <p>IMAJATOS mempertemukan anak muda, ide, dan semangat kolaborasi untuk menjawab kebutuhan nyata di sekitar kita.</p>
           <Link href="/tentang" className="text-link">Cerita lengkapnya <ArrowRight size={17} /></Link>
         </div>
-        <div className="quote-card"><div className="quote-mark">“</div><blockquote>Masyarakat bukan hanya penerima manfaat, tetapi mitra utama dalam setiap perubahan.</blockquote><span>— Prinsip kerja IMAJATOS</span></div>
+        <div className="quote-card"><span className="content-status">Arah konten</span><div className="quote-mark">“</div><blockquote>Profil resmi, sejarah, dan prinsip kerja akan disesuaikan dengan informasi terverifikasi dari IMAJATOS.</blockquote><span>Konten sementara untuk kebutuhan presentasi desain.</span></div>
+      </section>
+
+      <section className="partner-section shell" aria-labelledby="partner-title">
+        <div><span className="mini-label">Untuk Sponsor & Mitra</span><h2 id="partner-title">Kolaborasi yang jelas sejak awal.</h2><p>Kami menyiapkan jalur komunikasi khusus untuk membahas tujuan, bentuk dukungan, dan kebutuhan program bersama calon sponsor maupun partner.</p></div>
+        <ol className="partner-steps"><li><span>01</span><strong>Sampaikan kebutuhan</strong><p>Ceritakan tujuan dan bentuk kolaborasi yang diharapkan.</p></li><li><span>02</span><strong>Diskusi bersama tim</strong><p>Kami menyelaraskan kebutuhan dengan ruang lingkup program.</p></li><li><span>03</span><strong>Susun langkah lanjut</strong><p>Rencana dan tanggung jawab disepakati secara transparan.</p></li></ol>
+        <Link href="/kontak#pengaduan" className="text-link">Bahas peluang kolaborasi <ArrowRight size={17} /></Link>
       </section>
 
       <section className="focus-section section">
@@ -49,7 +55,8 @@ export default function Home() {
 
       <section className="section shell">
         <div className="section-heading-row"><SectionTitle eyebrow="Kabar Terkini" title="Cerita dari lapangan." /><Link href="/berita" className="text-link">Lihat semua berita <ArrowRight size={17} /></Link></div>
-        <div className="news-grid">{news.slice(0, 3).map((item, i) => <article className={`news-card ${i === 0 ? "featured" : ""}`} key={item.slug}><div className="news-image"><Image src={item.image} alt="" fill sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"} /><span>{item.category}</span></div><div className="news-content"><time>{item.date}</time><h3>{item.title}</h3><p>{item.excerpt}</p><Link href={`/berita#${item.slug}`} aria-label={`Baca ${item.title}`}>Baca selengkapnya <ArrowRight size={16} /></Link></div></article>)}</div>
+        <p className="content-note">Konten berita berikut masih berupa contoh dan akan diganti dengan publikasi resmi IMAJATOS.</p>
+        <div className="news-grid">{news.slice(0, 3).map((item, i) => <article className={`news-card ${i === 0 ? "featured" : ""}`} key={item.slug}><div className="news-image"><Image src={item.image} alt={`Foto ilustrasi untuk ${item.title}`} fill sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"} /><span>{item.category}</span></div><div className="news-content">{item.isPlaceholder && <small className="content-status">Contoh konten</small>}<time>{item.date}</time><h3>{item.title}</h3><p>{item.excerpt}</p><Link href={`/berita#${item.slug}`} aria-label={`Lihat contoh ${item.title}`}>Lihat contoh artikel <ArrowRight size={16} /></Link></div></article>)}</div>
       </section>
 
       <section className="cta-section"><div className="shell cta-inner"><div><span className="cta-kicker"><Megaphone size={18} /> Terbuka untuk kolaborasi</span><h2>Mari ciptakan dampak bersama.</h2><p>Punya ide program, peluang sponsorship, atau rencana partnership? Kami terbuka untuk bekerja sama.</p></div><Link href="/kontak#pengaduan" className="button button-light">Hubungi Kami <ArrowRight size={18} /></Link></div></section>
