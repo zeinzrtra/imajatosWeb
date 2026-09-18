@@ -8,7 +8,7 @@ import { useState } from "react";
 const links = [
   ["/", "Beranda"],
   ["/tentang", "Tentang Kami"],
-  ["/berita", "Berita"],
+  ["/program", "Program Kerja"],
   ["/galeri", "Galeri"],
   ["/kontak", "Kontak"],
 ];

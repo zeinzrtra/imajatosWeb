@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, GraduationCap, Megaphone, Network, Users } from "lucide-react";
 import { SectionTitle } from "@/components/SectionTitle";
-import { news } from "@/data/site";
+import { programs } from "@/data/site";
 
 const identity = [
   { icon: GraduationCap, title: "Wadah Mahasiswa IPB", text: "Mewadahi para mahasiswa IPB University yang diterima melalui jalur Ketua OSIS." },
@@ -21,7 +21,7 @@ export default function Home() {
           <p>IMAJATOS mewadahi mahasiswa IPB University jalur Ketua OSIS dan berjalan melalui struktur kepengurusan internalnya sendiri.</p>
           <div className="hero-actions">
             <Link href="/tentang" className="button button-primary">Kenali IMAJATOS <ArrowRight size={18} /></Link>
-            <Link href="/berita" className="button button-ghost">Lihat Kabar</Link>
+            <Link href="/program" className="button button-ghost">Lihat Program</Link>
           </div>
           <div className="hero-stats hero-principles">
             <div><GraduationCap size={20} /><span>Mahasiswa jalur Ketua OSIS</span></div><div><Users size={20} /><span>Kepengurusan mandiri</span></div><div><Building2 size={20} /><span>Terbuka untuk kolaborasi</span></div>
@@ -52,9 +52,9 @@ export default function Home() {
       </section>
 
       <section className="section shell">
-        <div className="section-heading-row"><SectionTitle eyebrow="Kabar Terkini" title="Cerita dari lapangan." /><Link href="/berita" className="text-link">Lihat semua berita <ArrowRight size={17} /></Link></div>
-        <p className="content-note">Konten berita berikut masih berupa contoh dan akan diganti dengan publikasi resmi IMAJATOS.</p>
-        <div className="news-grid">{news.slice(0, 3).map((item, i) => <article className={`news-card ${i === 0 ? "featured" : ""}`} key={item.slug}><div className="news-image"><Image src={item.image} alt={`Foto ilustrasi untuk ${item.title}`} fill sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"} /><span>{item.category}</span></div><div className="news-content">{item.isPlaceholder && <small className="content-status">Contoh konten</small>}<time>{item.date}</time><h3>{item.title}</h3><p>{item.excerpt}</p><Link href={`/berita#${item.slug}`} aria-label={`Lihat contoh ${item.title}`}>Lihat contoh artikel <ArrowRight size={16} /></Link></div></article>)}</div>
+        <div className="section-heading-row"><SectionTitle eyebrow="Program Kerja" title="Rencana yang bisa diikuti." /><Link href="/program" className="text-link">Lihat semua program <ArrowRight size={17} /></Link></div>
+        <p className="content-note">Nama dan informasi program berikut masih berupa struktur contoh. Konten final akan menggunakan program resmi IMAJATOS.</p>
+        <div className="program-preview-grid">{programs.slice(0, 3).map((program, index) => <article className="program-preview-card" key={program.slug}><span className="program-index">0{index + 1}</span><small>{program.unitType}</small><h3>{program.title}</h3><p>{program.summary}</p><Link href={`/program#${program.slug}`}>Lihat format program <ArrowRight size={16} /></Link></article>)}</div>
       </section>
 
       <section className="cta-section"><div className="shell cta-inner"><div><span className="cta-kicker"><Megaphone size={18} /> Terbuka untuk kolaborasi</span><h2>Mari ciptakan dampak bersama.</h2><p>Punya ide program, peluang sponsorship, atau rencana partnership? Kami terbuka untuk bekerja sama.</p></div><Link href="/kontak#pengaduan" className="button button-light">Hubungi Kami <ArrowRight size={18} /></Link></div></section>

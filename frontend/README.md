@@ -13,9 +13,10 @@ Buka `http://localhost:3000` di browser.
 
 ## Halaman
 
-- `/` — beranda, hero, fokus layanan, dan berita terbaru
+- `/` — beranda, identitas organisasi, dan ringkasan program kerja
 - `/tentang` — sejarah, visi/misi, nilai, dan struktur organisasi
-- `/berita` — arsip berita dengan pencarian dan filter kategori
+- `/program` — direktori program kerja dengan pencarian, filter unit, status, dan format detail
+- `/berita` — mengalihkan tautan lama ke halaman program kerja
 - `/galeri` — dokumentasi foto/video
 - `/kontak` — informasi kontak, form pengaduan, dan peta
 
