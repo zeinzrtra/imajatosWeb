@@ -17,13 +17,38 @@ export function Header() {
   const [active, setActive] = useState("beranda");
 
   useEffect(() => {
-    const sections = links.map(([id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible?.target.id) setActive(visible.target.id);
-    }, { rootMargin: "-28% 0px -62%", threshold: [0, 0.1, 0.3] });
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+      const readingLine = headerHeight + Math.min(window.innerHeight * 0.24, 180);
+      let current = links[0][0];
+
+      for (const [id] of links) {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= readingLine) current = id;
+        else break;
+      }
+
+      setActive((previous) => previous === current ? previous : current);
+    };
+
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updateActiveSection);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("hashchange", scheduleUpdate);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("hashchange", scheduleUpdate);
+    };
   }, []);
 
   return (
