@@ -39,9 +39,7 @@ export default function Home() {
         <div className="identity-ribbon-track">
           <span>Mahasiswa</span><i />
           <span>Kolaborasi</span><i />
-          <span>Kepemimpinan</span><i />
-          <span>IMAJATOS</span><i />
-          <span>IPB University</span><i />
+          <span>Kepemimpinan</span>
         </div>
       </div>
 
