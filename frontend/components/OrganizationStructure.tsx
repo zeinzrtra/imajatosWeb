@@ -88,8 +88,9 @@ function ProfileCardTrigger({ count, role }: { count: number; role: string }) {
           {profiles.map((profile, index) => (
             <article className={`profile-playing-card card-${index + 1}`} key={profile}>
               <div className="card-corner card-corner-top"><span>I</span><small>IMAJATOS</small></div>
+              <div className="profile-card-heading"><strong>{profile}</strong><span>Pengurus inti</span></div>
               <div className="profile-photo-placeholder"><UserRound aria-hidden="true" /><span>Foto</span></div>
-              <div className="profile-card-copy"><strong>{profile}</strong><span>Nama menunggu data resmi</span></div>
+              <div className="profile-card-copy"><span>Nama menunggu data resmi</span></div>
               <div className="card-corner card-corner-bottom"><span>I</span><small>IMAJATOS</small></div>
             </article>
           ))}

@@ -10,16 +10,16 @@ type MotionGroup = {
 };
 
 const entranceGroups: MotionGroup[] = [
-  { selector: ".focus-heading, .about-editorial > div:first-child, .collaboration-copy, .contact-layout > aside", from: { opacity: 0, transform: "translate3d(-34px, 0, 0)" }, duration: 680 },
-  { selector: ".focus-card, .quote-card, .form-card", from: { opacity: 0, transform: "translate3d(30px, 0, 0) scale(.97)" }, duration: 640, stagger: 90 },
-  { selector: ".collective-statement, .landing-intro-row, .section-heading-row, .gallery-summary, .video-banner", from: { opacity: 0, transform: "translate3d(0, 34px, 0)" }, duration: 680 },
-  { selector: ".structure-group, .program-flow", from: { opacity: 0, transform: "translate3d(0, 28px, 0) scale(.975)" }, duration: 720, stagger: 110 },
-  { selector: ".program-card", from: { opacity: 0, transform: "translate3d(0, 38px, 0) scale(.98)" }, duration: 610, stagger: 70 },
-  { selector: ".gallery-grid figure", from: { opacity: 0, transform: "translate3d(0, 28px, 0) scale(.94)" }, duration: 650, stagger: 65 },
-  { selector: ".partner-steps li, .contact-list > div, .instagram-card", from: { opacity: 0, transform: "translate3d(24px, 0, 0)" }, duration: 520, stagger: 65 },
+  { selector: ".focus-heading, .about-editorial > div:first-child, .collaboration-copy, .contact-layout > aside", from: { opacity: 0, transform: "translate3d(-20px, 12px, 0)" }, duration: 900 },
+  { selector: ".focus-card, .quote-card, .form-card", from: { opacity: 0, transform: "translate3d(18px, 18px, 0) scale(.985)" }, duration: 880, stagger: 110 },
+  { selector: ".collective-statement, .landing-intro-row, .section-heading-row, .gallery-summary, .video-banner", from: { opacity: 0, transform: "translate3d(0, 22px, 0)" }, duration: 920 },
+  { selector: ".structure-group, .program-flow", from: { opacity: 0, transform: "translate3d(0, 20px, 0) scale(.988)" }, duration: 960, stagger: 120 },
+  { selector: ".program-card", from: { opacity: 0, transform: "translate3d(0, 24px, 0) scale(.99)" }, duration: 820, stagger: 90 },
+  { selector: ".gallery-grid figure", from: { opacity: 0, transform: "translate3d(0, 20px, 0) scale(.975)" }, duration: 900, stagger: 85 },
+  { selector: ".partner-steps li, .contact-list > div, .instagram-card", from: { opacity: 0, transform: "translate3d(14px, 8px, 0)" }, duration: 760, stagger: 80 },
 ];
 
-const easing = "cubic-bezier(.22, 1, .36, 1)";
+const easing = "cubic-bezier(.16, 1, .3, 1)";
 
 export function LandingMotion() {
   useEffect(() => {
@@ -53,11 +53,11 @@ export function LandingMotion() {
       ".hero-kicker, .hero h1, .hero-content > p, .hero-actions, .hero-principles",
     );
     heroItems.forEach((element, index) => {
-      play(element, { opacity: 0, transform: "translate3d(0, 26px, 0)" }, 650, 90 + index * 85);
+      play(element, { opacity: 0, transform: "translate3d(0, 20px, 0)" }, 880, 100 + index * 105);
     });
 
     const ribbon = document.querySelector<HTMLElement>(".identity-ribbon");
-    if (ribbon) play(ribbon, { opacity: 0, transform: "translate3d(-4%, 0, 0) rotate(-.7deg)" }, 720, 430);
+    if (ribbon) play(ribbon, { opacity: 0, transform: "translate3d(-2%, 8px, 0) rotate(-.7deg)" }, 920, 520);
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
