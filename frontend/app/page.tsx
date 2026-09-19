@@ -4,6 +4,7 @@ import { ArrowRight, Building2, GraduationCap, Network, Users } from "lucide-rea
 import { AboutSection } from "@/components/landing/AboutSection";
 import { ContactSection } from "@/components/landing/ContactSection";
 import { GallerySection } from "@/components/landing/GallerySection";
+import { LandingMotion } from "@/components/landing/LandingMotion";
 import { ProgramSection } from "@/components/landing/ProgramSection";
 import { SectionTitle } from "@/components/SectionTitle";
 
@@ -15,6 +16,7 @@ const identity = [
 export default function Home() {
   return (
     <>
+      <LandingMotion />
       <section id="beranda" className="hero landing-anchor">
         <Image src="/hero-community.png" alt="Ilustrasi mahasiswa berdiskusi dan berkolaborasi" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-overlay" />
