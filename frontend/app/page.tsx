@@ -18,6 +18,8 @@ export default function Home() {
       <section id="beranda" className="hero landing-anchor">
         <Image src="/hero-community.png" alt="Ilustrasi mahasiswa berdiskusi dan berkolaborasi" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-overlay" />
+        <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
+        <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
         <div className="shell hero-content">
           <div className="hero-kicker"><span /> Organisasi Mahasiswa IPB University</div>
           <h1>Satu Jalur,<br />Tumbuh dalam <em>Satu Wadah.</em></h1>
@@ -30,12 +32,26 @@ export default function Home() {
             <div><GraduationCap size={20} /><span>Mahasiswa jalur Ketua OSIS</span></div><div><Users size={20} /><span>Kepengurusan mandiri</span></div><div><Building2 size={20} /><span>Terbuka untuk kolaborasi</span></div>
           </div>
         </div>
+        <div className="hero-edge-copy" aria-hidden="true">IPB UNIVERSITY · JALUR KETUA OSIS</div>
       </section>
+
+      <div className="identity-ribbon" aria-hidden="true">
+        <div className="identity-ribbon-track">
+          <span>Mahasiswa</span><i />
+          <span>Kolaborasi</span><i />
+          <span>Kepemimpinan</span><i />
+          <span>IMAJATOS</span><i />
+          <span>IPB University</span><i />
+        </div>
+      </div>
 
       <section className="focus-section section" aria-label="Sekilas IMAJATOS">
         <div className="shell">
-          <div className="landing-intro-row"><SectionTitle eyebrow="Sekilas IMAJATOS" title="Satu identitas, dua hal yang perlu langsung dipahami." text="IMAJATOS adalah wadah mahasiswa IPB University jalur Ketua OSIS yang berjalan dengan kepengurusan internalnya sendiri." /></div>
-          <div className="focus-grid">{identity.map(({ icon: Icon, title, text }, i) => <article className="focus-card" key={title}><span className="focus-number">0{i + 1}</span><div className="focus-icon"><Icon size={26} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="focus-layout">
+            <div className="focus-heading"><SectionTitle eyebrow="Sekilas IMAJATOS" title="Satu identitas, banyak ruang untuk bertumbuh." text="IMAJATOS adalah wadah mahasiswa IPB University jalur Ketua OSIS yang berjalan dengan kepengurusan internalnya sendiri." /><div className="focus-wordmark" aria-hidden="true">Ima<br />jatos</div></div>
+            <div className="focus-grid">{identity.map(({ icon: Icon, title, text }) => <article className="focus-card" key={title}><div className="focus-icon"><Icon size={28} /></div><h3>{title}</h3><p>{text}</p><span className="focus-card-mark" aria-hidden="true">I</span></article>)}</div>
+          </div>
+          <div className="collective-statement"><span>Berangkat dari jalur yang sama.</span><strong>Bergerak dengan cara yang beragam.</strong></div>
         </div>
       </section>
 
