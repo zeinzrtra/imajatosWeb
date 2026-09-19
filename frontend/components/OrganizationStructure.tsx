@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, UserRound } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const executiveStructure = [
   { count: 3, role: "Ketua" },
@@ -17,15 +17,45 @@ const unitStructure = [
 function ProfileCardTrigger({ count, role }: { count: number; role: string }) {
   const [hovered, setHovered] = useState(false);
   const [pinned, setPinned] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const isOpen = hovered || pinned;
   const profileId = `${role.toLowerCase()}-profile-cards`;
   const profiles = Array.from({ length: count }, (_, index) => `${role} ${index + 1}`);
 
+  useEffect(() => {
+    if (!pinned) return;
+
+    const closeFromOutside = (event: PointerEvent) => {
+      if (!wrapperRef.current?.contains(event.target as Node)) {
+        setPinned(false);
+        setHovered(false);
+      }
+    };
+    const closeFromKeyboard = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setPinned(false);
+        setHovered(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", closeFromOutside, true);
+    document.addEventListener("keydown", closeFromKeyboard);
+    return () => {
+      document.removeEventListener("pointerdown", closeFromOutside, true);
+      document.removeEventListener("keydown", closeFromKeyboard);
+    };
+  }, [pinned]);
+
   return (
     <div
+      ref={wrapperRef}
       className={`chair-trigger-wrap ${isOpen ? "is-open" : ""}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse") setHovered(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === "mouse") setHovered(false);
+      }}
       onKeyDown={(event) => {
         if (event.key === "Escape") {
           setPinned(false);
@@ -38,7 +68,15 @@ function ProfileCardTrigger({ count, role }: { count: number; role: string }) {
         className="structure-card chair-trigger"
         aria-expanded={isOpen}
         aria-controls={profileId}
-        onClick={() => setPinned((current) => !current)}
+        onClick={() => {
+          if (pinned) {
+            setPinned(false);
+            setHovered(false);
+            return;
+          }
+
+          setPinned(true);
+        }}
       >
         <strong>{count}</strong>
         <span className="structure-role">{role}</span>
