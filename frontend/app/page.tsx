@@ -34,7 +34,7 @@ export default function Home() {
 
       <section className="focus-section section" aria-label="Sekilas IMAJATOS">
         <div className="shell">
-          <div className="landing-intro-row"><SectionTitle eyebrow="Sekilas IMAJATOS" title="Satu identitas, dua hal yang perlu langsung dipahami." text="IMAJATOS adalah wadah mahasiswa IPB University jalur Ketua OSIS yang berjalan dengan kepengurusan internalnya sendiri." /><span className="section-number" aria-hidden="true">01</span></div>
+          <div className="landing-intro-row"><SectionTitle eyebrow="Sekilas IMAJATOS" title="Satu identitas, dua hal yang perlu langsung dipahami." text="IMAJATOS adalah wadah mahasiswa IPB University jalur Ketua OSIS yang berjalan dengan kepengurusan internalnya sendiri." /></div>
           <div className="focus-grid">{identity.map(({ icon: Icon, title, text }, i) => <article className="focus-card" key={title}><span className="focus-number">0{i + 1}</span><div className="focus-icon"><Icon size={26} /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
         </div>
       </section>

@@ -71,9 +71,8 @@ export function Header() {
         </Link>
         <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Navigasi utama">
           <div className="nav-links">
-            {links.map(([id, label], index) => (
+            {links.map(([id, label]) => (
               <Link key={id} href={`/#${id}`} onClick={() => { setOpen(false); setActive(id); }} className={active === id ? "active" : ""} aria-current={active === id ? "location" : undefined}>
-                <span className="nav-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <span>{label}</span>
               </Link>
             ))}
